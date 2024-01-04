@@ -79,3 +79,20 @@ func TestSendFailure(t *testing.T) {
 		t.Error("Expected an error, but got nil")
 	}
 }
+
+func TestNewClientWithoutURL(t *testing.T) {
+	token := "your_token"
+
+	client := NewClient(token)
+
+	// Check if the token is set correctly
+	if client.Token != token {
+		t.Errorf("Expected token %s, got %s", token, client.Token)
+	}
+
+	// Check if the URL is set to the default value
+	expectedURL := "https://app.mailpace.com/api/v1/send"
+	if client.URL != expectedURL {
+		t.Errorf("Expected URL %s, got %s", expectedURL, client.URL)
+	}
+}

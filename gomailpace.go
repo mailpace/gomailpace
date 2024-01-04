@@ -36,14 +36,18 @@ type Client struct {
 	URL string
 }
 
+const DefaultURL = "https://app.mailpace.com/api/v1/send"
+
 // NewClient creates a new MailPace API client.
-func NewClient(token string, url string) *Client {
+func NewClient(token string, urls ...string) *Client {
 	client := &Client{
 		Token: token,
 	}
 
-	if len(url) > 0 {
-		client.URL = url
+	if len(urls) > 0 && urls[0] != "" {
+		client.URL = urls[0]
+	} else {
+		client.URL = DefaultURL
 	}
 
 	return client
@@ -51,18 +55,12 @@ func NewClient(token string, url string) *Client {
 
 // Send sends an email using the MailPace API.
 func (c *Client) Send(payload Payload) error {
-	// If the URL is not provided during client creation, use the default
-	apiURL := "https://app.mailpace.com/api/v1/send"
-	if c.URL != "" {
-		apiURL = c.URL
-	}
-
 	jsonPayload, err := json.Marshal(payload)
 	if err != nil {
 		return err
 	}
 
-	req, err := http.NewRequest("POST", apiURL, bytes.NewBuffer(jsonPayload))
+	req, err := http.NewRequest("POST", c.URL, bytes.NewBuffer(jsonPayload))
 	if err != nil {
 		return err
 	}
