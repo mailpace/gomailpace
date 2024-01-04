@@ -2,7 +2,7 @@
 
 [![GoDoc](https://pkg.go.dev/badge/github.com/mailpace/gomailpace)](https://pkg.go.dev/github.com/mailpace/gomailpace)
 [![Build Status](https://circleci.com/gh/mailpace/gomailpace.svg?style=svg)](https://circleci.com/gh/mailpace/gomailpace)
-[![Coverage Status](https://codecov.io/gh/mailpace/gomailpace/branch/main/graph/badge.svg)](https://codecov.io/gh/mailpace/gomailpace)
+[![Coverage Status](https://codecov.io/gh/mailpace/gomailpace/graph/badge.svg?token=7FP4G7OLY5)](https://codecov.io/gh/mailpace/gomailpace)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Go Version](https://img.shields.io/github/go-mod/go-version/mailpace/gomailpace)](https://golang.org/doc/go-get-installation)
 [![GitHub release](https://img.shields.io/github/release/mailpace/gomailpace.svg)](https://github.com/mailpace/gomailpace/releases)
