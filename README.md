@@ -33,8 +33,8 @@ Replace "MAILPACE_TOKEN" with your actual MailPace API token.
 emailPayload := gomailpace.Payload{
     From:     "service@example.com",
     To:       "user@example.com",
-    Subject:  "Welcome",
-    TextBody: "Hi",
+    Subject:  "MailPace Rocks!",
+    TextBody: "MailPace is the best transactional email provider out there",
 }
 
 err := emailClient.Send(emailPayload)
@@ -52,7 +52,7 @@ You can include various options such as HTML body, CC, BCC, attachments, tags, e
 emailPayload := gomailpace.Payload{
     From:        "service@example.com",
     To:          "user@example.com",
-    Subject:     "Welcome",
+    Subject:     "MailPace Rocks!",
     HTMLBody:    "<html><body><p>Content</p></body></html>",
     CC:          "cc@example.com",
     Attachments: []gomailpace.Attachment{
