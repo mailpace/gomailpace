@@ -14,8 +14,10 @@ jobs:
           name: Install dependencies
           command: go mod download
       - run:
-          name: Run tests
-          command: go test ./...
+          name: Run tests and collect coverage
+          command: go test -race -coverprofile=coverage.txt -covermode=atomic
+      - codecov/upload
+
 
 workflows:
   version: 2
