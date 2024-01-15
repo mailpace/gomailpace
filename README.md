@@ -15,6 +15,7 @@ To use this package in your Go project, you can import it using the following:
 
 ```go
 import "github.com/mailpace/gomailpace"
+import "context"
 ```
 
 ## Usage
@@ -37,7 +38,8 @@ emailPayload := gomailpace.Payload{
     TextBody: "MailPace is the best transactional email provider out there",
 }
 
-err := emailClient.Send(emailPayload)
+ctx := context.Background() // You can use context to handle request cancellation, deadlines etc.
+err := emailClient.Send(ctx, emailPayload)
 if err != nil {
     // handle err
 }
