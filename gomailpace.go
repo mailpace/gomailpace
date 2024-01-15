@@ -2,6 +2,7 @@ package gomailpace
 
 import (
 	"bytes"
+	"context"
 	"encoding/json"
 	"fmt"
 	"net/http"
@@ -33,7 +34,7 @@ type Payload struct {
 // Client represents the MailPace API client.
 type Client struct {
 	Token string
-	URL string
+	URL   string
 }
 
 const DefaultURL = "https://app.mailpace.com/api/v1/send"
@@ -54,13 +55,13 @@ func NewClient(token string, urls ...string) *Client {
 }
 
 // Send sends an email using the MailPace API.
-func (c *Client) Send(payload Payload) error {
+func (c *Client) Send(ctx context.Context, payload Payload) error {
 	jsonPayload, err := json.Marshal(payload)
 	if err != nil {
 		return err
 	}
 
-	req, err := http.NewRequest("POST", c.URL, bytes.NewBuffer(jsonPayload))
+	req, err := http.NewRequestWithContext(ctx, "POST", c.URL, bytes.NewBuffer(jsonPayload))
 	if err != nil {
 		return err
 	}
