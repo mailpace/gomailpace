@@ -1,6 +1,7 @@
 # GoMailpace
 
 [![GoDoc](https://pkg.go.dev/badge/github.com/mailpace/gomailpace)](https://pkg.go.dev/github.com/mailpace/gomailpace)
+[![GoReport](https://goreportcard.com/badge/github.com/mailpace/gomailpace)](http://goreportcard.com/report/mailpace/gomailpace)
 [![Build Status](https://circleci.com/gh/mailpace/gomailpace.svg?style=svg)](https://circleci.com/gh/mailpace/gomailpace)
 [![Coverage Status](https://codecov.io/gh/mailpace/gomailpace/graph/badge.svg?token=7FP4G7OLY5)](https://codecov.io/gh/mailpace/gomailpace)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
